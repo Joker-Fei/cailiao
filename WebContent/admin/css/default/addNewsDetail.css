@@ -1,0 +1,281 @@
+@CHARSET "UTF-8";
+a{
+	color:#FFF;
+}
+.bezel{
+	width:99%;
+	height:755px;
+	margin:5px auto;
+	color:#FFF;
+}
+.head{
+	width:100%;
+	height:10%;
+	background:#3c4145;
+	background:rgba(0,0,0,0.5);
+	line-height:60px;
+	border-top-left-radius:4px;
+	border-top-right-radius:4px;
+	-moz-border-top-left-radius:4px;
+	-moz-border-top-right-radius:4px;/* Old Firefox */
+	overflow:hidden;
+	border-bottom:2px #000 solid;
+}
+.head div{
+	height:100%;
+	float:left;
+	line-height:60px;
+}
+
+.hleft{
+	width:15%;
+	font:bold 15px 宋体;
+}
+
+.head-icon{
+	height:60px;
+	background:url(../../images/logo-right.png) no-repeat;
+	background-position:10px 0;
+	display:block;
+	margin-top:10px;
+	padding-left:70px;
+}
+.hcenter{
+	width:40%;
+}
+.hcenter ul{
+	width:450px;
+	height:30px;
+	margin:0px auto;
+	margin-top:45px;
+}
+.hcenter li{
+	width:100px;
+	text-align:center;
+	height:30px;
+	line-height:32px;
+	float:left;
+	border:1px #000 solid;
+	display:inline;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;
+	-moz-border-top-left-radius:14px;
+	-moz-border-top-right-radius:14px;
+	cursor:pointer;
+}
+.hcenter .on{
+	background-color: #2a2525;
+	font-weight:bold;
+}
+.hright{
+	width:45%;
+}
+.hright span{
+	float:right;
+	display:inline;
+	padding-right:15px;
+}
+.outLogin{
+padding:1px 8px;
+height:25px;
+line-height:25px;
+text-align:center;
+font-size:14px;
+color:#FFFFFF;
+background-color: #2a2525;
+background: rgba(0,0,0,0.4); 
+border:1px rgba(0,0,0,0.4) solid;
+border-radius:4px;
+-moz-border-radius:4px; /* Old Firefox */
+cursor:pointer;
+display:inline-block;
+}
+.center{
+	width:100%;
+	height:90%;
+	clear:both;
+}
+.cleft{
+	width:15%;
+	height:100%;
+	background:#30383b;
+	background:rgba(0,0,0,0.6);
+	float:left;
+	display:inline;
+	overflow-y:auto;
+}
+.cleft h4{
+	text-align:center;
+	line-height:44px;
+	cursor:pointer;
+	border-bottom:1px rgba(0,0,0,0.2) solid;
+	font-size:14px;
+}
+.cleft ul{
+	font-size:13px;
+	background:#30383b;
+	background:rgba(0,0,0,0.22);
+	display:none;
+}
+.cleft ul li{
+	text-align:center;
+	border-bottom:1px #CCC solid;
+	border-bottom:1px rgba(0,0,0,0.1) solid;
+}
+
+.cleft ul li a{
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	display:block;
+}
+
+.cleft ul li.on{
+	font-size:15px;
+	border-right:4px #7dc92d solid;
+	padding-left:5px;
+	background:#30383b;
+	background:rgba(0,0,0,0.2);
+}
+
+.cleft h4.on{
+	background-color:#2a2525;
+	border-left:4px #7dc92d solid;
+	padding-right:4px;
+}
+
+.rleft{
+	width:85%;
+	height:100%;
+	background:#30383b;
+	background:rgba(0,0,0,0.6);
+	overflow-y:auto;
+	float:left;
+}
+
+
+.floot{
+clear:both;
+width:100%;
+height:5%;
+text-align:center;
+background:rgba(0,0,0,0.6);
+border-top:1px #000 solid;
+border-top:1px rgba(0,0,0,0.5) solid;
+font:bold 14px 宋体;
+height:30px;
+line-height:30px;
+border-bottom-left-radius:4px;
+border-bottom-right-radius:4px;
+-moz-border-bottom-left-radius:4px;
+-moz-border-bottom-right-radius:4px;
+}
+
+.center{
+	width:100%;
+	height:86%;
+}
+.search{
+	width:99%;
+	clear:both;
+	margin:1% 1%;
+}
+.search span{
+	margin:5px auto;
+}
+.search input{
+	height:20px;
+	line-height:20px;
+	border-radius:4px;
+	-moz-border-radius:4px;/* Old Firefox */
+}
+#search-btn{
+	width:55px;
+	height:25px;
+	border:1px rgba(0,0,0,0.4) solid;
+	background:rgba(0,0,0,0.4);
+	color:#FFF;
+	cursor:pointer;
+}
+
+.topMenu ul{
+	widht:100%;
+	height:25px;
+	margin-left:5px;
+}
+.topMenu ul li{
+	height:25px;
+	line-height:25px;
+	text-align:center;
+	border:1px rgba(0,0,0,0.4) solid;
+	background:rgba(0,0,0,0.4);	
+	border-radius:4px;
+	-moz-border-radius:4px;/* Old Firefox */
+	margin-left:4px;
+	float:left;
+	display:inline;
+	
+}
+
+.tableMain{
+	width:100%;
+	height:85%;
+	overflow-y:auto;
+	color:#FFF;
+}
+
+/*此处设置表格里的字体大小*/
+.right-table{
+	font-size:15px;
+	margin:0px auto;
+}
+
+/*此处设置的是表头字体属性*/
+.right-table th{
+	height:25px;
+	line-height:10px;
+	background:rgba(0,0,0,0.4);
+	border:0px rgba(0,0,0,0.4) solid;
+	border-right:0px;
+	border-top:0px;
+}
+
+/*此处设置的是表格的属性*/
+.right-table td{
+	height:35px;
+	line-height:35px;
+	border:1px rgba(0,0,0,0.4) solid;
+	text-align:center;
+	border-right:0px;
+	border-top:0px;
+}
+#clearTDrightBorder{
+	border-right:1px rgba(0,0,0,0.4) solid;
+}
+.position{
+	width:100%;
+	height:60px;
+	line-height:44px;
+}
+
+
+#page ul{
+	width:400px;
+	height:25px;
+	margin:0px auto;
+	margin-top:10px;	
+}
+#page ul li{
+	height:25px;
+	line-height:25px;
+	text-align:center;
+	border:1px rgba(0,0,0,0.4) solid;
+	background:rgba(0,0,0,0.4);	
+	border-radius:4px;
+	-moz-border-radius:4px;/* Old Firefox */
+	margin-left:5px;
+	float:left;
+	display:inline;
+}
+
+

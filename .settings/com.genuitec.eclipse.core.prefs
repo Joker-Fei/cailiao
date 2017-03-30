@@ -1,0 +1,4 @@
+#Sun Feb 28 15:46:15 CST 2016
+eclipse.preferences.version=1
+validator.Checked=WebContent/js/jquery-1.7.1.min.js,WebContent/share/js/jquery-1.11.0.min.js,WebContent/jsp/js/jquery.min.js,WebContent/js/dedeajax2.js,WebContent/ckeditor/ckeditor.js,WebContent/share/js/jquery.min.js,WebContent/ckfinder/plugins/gallery/colorbox/jquery.min.js,WebContent/js/jquery-1.7.1min.js
+validator.Unchecked=

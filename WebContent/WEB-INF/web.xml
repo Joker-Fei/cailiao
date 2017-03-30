@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>cailiao</display-name>
+  <welcome-file-list>
+    <welcome-file>toFirstWeb.jsp</welcome-file>
+  </welcome-file-list>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/404.jsp</location>
+  </error-page>
+  <filter>
+    <display-name>EncodingFilter</display-name>
+    <filter-name>EncodingFilter</filter-name>
+    <filter-class>com.hlg.util.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>EncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>ConnectorServlet</servlet-name>
+    <servlet-class>com.ckfinder.connector.ConnectorServlet</servlet-class>
+    <init-param>
+      <param-name>XMLConfig</param-name>
+      <param-value>/WEB-INF/config.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>false</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ConnectorServlet</servlet-name>
+    <url-pattern>
+			/ckfinder/core/connector/java/connector.java
+		</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>FileUploadFilter</filter-name>
+    <filter-class>com.ckfinder.connector.FileUploadFilter</filter-class>
+    <init-param>
+      <param-name>sessionCookieName</param-name>
+      <param-value>JSESSIONID</param-value>
+    </init-param>
+    <init-param>
+      <param-name>sessionParameterName</param-name>
+      <param-value>jsessionid</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>FileUploadFilter</filter-name>
+    <url-pattern>
+			/ckfinder/core/connector/java/connector.java
+     	 </url-pattern>
+  </filter-mapping>
+  <session-config>
+    <session-timeout>300</session-timeout>
+  </session-config>
+  <servlet>
+    <servlet-name>UserDetailServlet</servlet-name>
+    <servlet-class>com.hlg.action.UserDetailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserDetailServlet</servlet-name>
+    <url-pattern>/userdetailservlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>NewsTypeServlet</servlet-name>
+    <servlet-class>com.hlg.action.NewsTypeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewsTypeServlet</servlet-name>
+    <url-pattern>/newstypeservlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>NewsDetailServlet</servlet-name>
+    <servlet-class>com.hlg.action.NewsDetailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewsDetailServlet</servlet-name>
+    <url-pattern>/newsdetailservlet</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>com.hlg.util.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>/backStageWeb/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>CoorperationDetailServlet</servlet-name>
+    <servlet-class>com.hlg.action.CoorperationDetailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CoorperationDetailServlet</servlet-name>
+    <url-pattern>/coorperationdetailservlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>CoorperationTypeServlet</servlet-name>
+    <servlet-class>com.hlg.action.CoorperationTypeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CoorperationTypeServlet</servlet-name>
+    <url-pattern>/coorperationtypeservlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SubjectTypeServlet</servlet-name>
+    <servlet-class>com.hlg.action.SubjectTypeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubjectTypeServlet</servlet-name>
+    <url-pattern>/subjecttypeservlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SubjectDetailServlet</servlet-name>
+    <servlet-class>com.hlg.action.SubjectDetailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubjectDetailServlet</servlet-name>
+    <url-pattern>/subjectdetailservlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>TeacherDetailServlet</servlet-name>
+    <servlet-class>com.hlg.action.TeacherDetailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TeacherDetailServlet</servlet-name>
+    <url-pattern>/teacherdetailservlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>TopNewsDetailServlet</servlet-name>
+    <servlet-class>com.hlg.action.TopNewsDetailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TopNewsDetailServlet</servlet-name>
+    <url-pattern>/topnewsdetailservlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>StudentDetailServlet</servlet-name>
+    <servlet-class>com.hlg.action.StudentDetailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentDetailServlet</servlet-name>
+    <url-pattern>/studentdetailservlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>WorkTypeServlet</servlet-name>
+    <servlet-class>com.hlg.action.WorkTypeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WorkTypeServlet</servlet-name>
+    <url-pattern>/worktypeservlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>WorkDetailServlet</servlet-name>
+    <servlet-class>com.hlg.action.WorkDetailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>WorkDetailServlet</servlet-name>
+    <url-pattern>/workdetailservlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>UserTestCenterServlet</servlet-name>
+    <servlet-class>com.hlg.action.UserTestCenterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserTestCenterServlet</servlet-name>
+    <url-pattern>/userTestCenterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>TestCenterTypeServlet</servlet-name>
+    <servlet-class>com.hlg.action.TestCenterTypeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestCenterTypeServlet</servlet-name>
+    <url-pattern>/testCenterTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>TestCenterInfoServlet</servlet-name>
+    <servlet-class>com.hlg.action.TestCenterInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TestCenterInfoServlet</servlet-name>
+    <url-pattern>/testCenterInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ServiceTypeServlet</servlet-name>
+    <servlet-class>com.hlg.action.ServiceTypeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServiceTypeServlet</servlet-name>
+    <url-pattern>/serviceTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ServiceGuideServlet</servlet-name>
+    <servlet-class>com.hlg.action.ServiceGuideServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServiceGuideServlet</servlet-name>
+    <url-pattern>/serviceGuideServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>InstrumentTypeServlet</servlet-name>
+    <servlet-class>com.hlg.action.InstrumentTypeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InstrumentTypeServlet</servlet-name>
+    <url-pattern>/instrumentTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>InstrumentServlet</servlet-name>
+    <servlet-class>com.hlg.action.InstrumentServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InstrumentServlet</servlet-name>
+    <url-pattern>/instrumentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AccreditationTypeServlet</servlet-name>
+    <servlet-class>com.hlg.action.AccreditationTypeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AccreditationTypeServlet</servlet-name>
+    <url-pattern>/accreditationTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>AccreditationServlet</servlet-name>
+    <servlet-class>com.hlg.action.AccreditationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AccreditationServlet</servlet-name>
+    <url-pattern>/accreditationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>PhotoTypeServlet</servlet-name>
+    <servlet-class>com.hlg.action.PhotoTypeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PhotoTypeServlet</servlet-name>
+    <url-pattern>/photoTypeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SamplePhotoServlet</servlet-name>
+    <servlet-class>com.hlg.action.SamplePhotoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SamplePhotoServlet</servlet-name>
+    <url-pattern>/samplePhotoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>SelectType</servlet-name>
+    <servlet-class>com.hlg.util.SelectType</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectType</servlet-name>
+    <url-pattern>/selectType</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>LoginFilter2</filter-name>
+    <filter-class>com.hlg.util.LoginFilter2</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginFilter2</filter-name>
+    <url-pattern>/web/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>InitConfigInfo</servlet-name>
+    <servlet-class>com.hlg.util.InitConfigInfo</servlet-class>
+    <init-param>
+      <param-name>driver</param-name>
+      <param-value>com.mysql.jdbc.Driver</param-value>
+    </init-param>
+    <init-param>
+      <param-name>url</param-name>
+      <param-value>
+                jdbc:mysql://localhost:3306/materialdb?characterEncoding=utf-8
+            </param-value>
+    </init-param>
+    <init-param>
+      <param-name>username</param-name>
+      <param-value>root</param-value>
+    </init-param>
+    <init-param>
+      <param-name>password</param-name>
+      <param-value>123123</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  
+  
+  
+  
+  	<servlet>
+		<servlet-name>SimpleUploader</servlet-name>
+		<servlet-class>com.EN.action.CKEditorUploadServlet</servlet-class>
+		<init-param>
+			<param-name>baseDir</param-name>
+			<param-value>/UserFiles/</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>false</param-value>
+		</init-param>
+		<init-param>
+			<param-name>enabled</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>AllowedExtensionsFile</param-name>
+			<param-value></param-value>
+		</init-param>
+		<init-param>
+			<param-name>DeniedExtensionsFile</param-name>
+			<param-value>
+				html|htm|php|php2|php3|php4|php5|phtml|pwml|inc|asp|aspx|ascx|jsp|cfm|cfc|pl|bat|exe|com|dll|vbs|js|reg|cgi|htaccess|asis|ftl
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>AllowedExtensionsImage</param-name>
+			<param-value>jpg|gif|jpeg|png|bmp</param-value>
+		</init-param>
+		<init-param>
+			<param-name>DeniedExtensionsImage</param-name>
+			<param-value></param-value>
+		</init-param>
+		<init-param>
+			<param-name>AllowedExtensionsFlash</param-name>
+			<param-value>swf|fla</param-value>
+		</init-param>
+		<init-param>
+			<param-name>DeniedExtensionsFlash</param-name>
+			<param-value></param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SimpleUploader</servlet-name>
+		<url-pattern>/ckeditor/uploader</url-pattern>
+	</servlet-mapping>
+  
+  
+  
+  
+  <servlet>
+    <servlet-name>RegisterUIServlet</servlet-name>
+    <servlet-class>com.EN.web.UI.RegisterUIServlet</servlet-class>
+  </servlet>
+   <servlet-mapping>
+    <servlet-name>RegisterUIServlet</servlet-name>
+    <url-pattern>/servlet/RegisterUIServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.EN.action.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/servlet/RegisterServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet>
+    <servlet-name>LoginUIServlet</servlet-name>
+    <servlet-class>com.EN.web.UI.LoginUIServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginUIServlet</servlet-name>
+    <url-pattern>/servlet/LoginUIServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.EN.action.LoginServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.EN.action.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>mbAddServlet</servlet-name>
+    <servlet-class>com.EN.action.mbAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>imageGet</servlet-name>
+    <servlet-class>com.EN.action.imageGet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>dmAddServlet</servlet-name>
+    <servlet-class>com.EN.action.dmAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>dmFindServlet</servlet-name>
+    <servlet-class>com.EN.action.dmFindServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>dmModifServlet</servlet-name>
+    <servlet-class>com.EN.action.dmModifServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>dmFindAllServlet</servlet-name>
+    <servlet-class>com.EN.action.dmFindAllServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>dmDelServlet</servlet-name>
+    <servlet-class>com.EN.action.dmDelServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>dmShowServlet</servlet-name>
+    <servlet-class>com.EN.action.dmShowServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>intdShowServlet</servlet-name>
+    <servlet-class>com.EN.action.intdShowServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>intrAddServlet</servlet-name>
+    <servlet-class>com.EN.action.intrAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>intrModifServlet</servlet-name>
+    <servlet-class>com.EN.action.intrModifServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>intrDelServlet</servlet-name>
+    <servlet-class>com.EN.action.intrDelServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>intrFindServlet</servlet-name>
+    <servlet-class>com.EN.action.intrFindServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>addResearch</servlet-name>
+    <servlet-class>com.EN.action.addResearch</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>modifEducation</servlet-name>
+    <servlet-class>com.EN.action.modifEducation</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>modifCuntactus</servlet-name>
+    <servlet-class>com.EN.action.modifCuntactus</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>menFindAllServlet</servlet-name>
+    <servlet-class>com.EN.action.menFindAllServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>menShowServlet</servlet-name>
+    <servlet-class>com.EN.action.menShowServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>imageUpload</servlet-name>
+    <servlet-class>com.EN.action.imageUpload</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>menDeleteServlet</servlet-name>
+    <servlet-class>com.EN.action.menDeleteServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>menModifServlet</servlet-name>
+    <servlet-class>com.EN.action.menModifServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>menFundServlet</servlet-name>
+    <servlet-class>com.EN.action.menFundServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>modifAdminServlet</servlet-name>
+    <servlet-class>com.EN.action.modifAdminServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/servlet/LoginServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/servlet/LogoutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>mbAddServlet</servlet-name>
+    <url-pattern>/servlet/mbAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>imageGet</servlet-name>
+    <url-pattern>/servlet/imageGet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>dmAddServlet</servlet-name>
+    <url-pattern>/servlet/dmAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>dmFindServlet</servlet-name>
+    <url-pattern>/servlet/dmFindServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>dmModifServlet</servlet-name>
+    <url-pattern>/servlet/dmModifServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>dmFindAllServlet</servlet-name>
+    <url-pattern>/servlet/dmFindAllServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>dmDelServlet</servlet-name>
+    <url-pattern>/servlet/dmDelServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>dmShowServlet</servlet-name>
+    <url-pattern>/servlet/dmShowServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>intdShowServlet</servlet-name>
+    <url-pattern>/servlet/intdShowServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>intrAddServlet</servlet-name>
+    <url-pattern>/servlet/intrAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>intrModifServlet</servlet-name>
+    <url-pattern>/servlet/intrModifServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>intrDelServlet</servlet-name>
+    <url-pattern>/servlet/intrDelServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>intrFindServlet</servlet-name>
+    <url-pattern>/servlet/intrFindServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>addResearch</servlet-name>
+    <url-pattern>/servlet/addResearch</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>modifEducation</servlet-name>
+    <url-pattern>/servlet/modifEducation</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>modifCuntactus</servlet-name>
+    <url-pattern>/servlet/modifCuntactus</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>menFindAllServlet</servlet-name>
+    <url-pattern>/servlet/menFindAllServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>menShowServlet</servlet-name>
+    <url-pattern>/servlet/menShowServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>imageUpload</servlet-name>
+    <url-pattern>/servlet/imageUpload</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>menDeleteServlet</servlet-name>
+    <url-pattern>/servlet/menDeleteServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>menModifServlet</servlet-name>
+    <url-pattern>/servlet/menModifServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>menFundServlet</servlet-name>
+    <url-pattern>/servlet/menFundServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>modifAdminServlet</servlet-name>
+    <url-pattern>/servlet/modifAdminServlet</url-pattern>
+  </servlet-mapping>
+</web-app>

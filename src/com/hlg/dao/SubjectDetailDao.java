@@ -1,4 +1,4 @@
-package com.hlg.dao;
+﻿package com.hlg.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -75,27 +75,6 @@ public class SubjectDetailDao {
 				subjectDetail.getId() };
 		return dbUtil.executeUpdate(sql, params);
 	}
-
-	/*
-	 * public List<SubjectDetail> findByCondition(SubjectDetail subjectDetail) {
-	 * StringBuffer buffer = new StringBuffer(
-	 * "select n.id,n.subName,n.content,n.userId,n.typeId," +
-	 * " u.userName author,t.typeName,n.web,n.publishTime" +
-	 * " from sub n,userdetail u,subType t" +
-	 * " where n.userId=u.id and n.typeId=t.id "); List<Object> params = new
-	 * ArrayList<Object>(); if (subjectDetail != null) { if
-	 * (subjectDetail.getSubName() != null &&
-	 * !"".equals(subjectDetail.getSubName())) {
-	 * buffer.append(" and title like ?"); params.add("%" +
-	 * subjectDetail.getSubName() + "%"); } if (subjectDetail.getContent() !=
-	 * null && !"".equals(subjectDetail.getContent())) {
-	 * buffer.append(" and content like ?"); params.add("%" +
-	 * subjectDetail.getContent() + "%"); } if (subjectDetail.getTypeId() != -1)
-	 * { buffer.append(" and typeId= ?"); params.add(subjectDetail.getTypeId());
-	 * }
-	 * 
-	 * } return findBySQL(new String(buffer), params.toArray()); }
-	 */
 
 	/*
 	 * // 根据类型查找新闻 public List<SubjectDetail> findByTypeId(int typeId) { String
